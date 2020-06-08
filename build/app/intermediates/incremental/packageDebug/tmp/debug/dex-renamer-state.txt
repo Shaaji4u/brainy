@@ -1,0 +1,4 @@
+#Tue Jun 09 00:21:59 WAT 2020
+base.0=/mnt/6E67E877010661F9/brainy/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
