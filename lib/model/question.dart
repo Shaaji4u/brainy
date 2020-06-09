@@ -1,7 +1,7 @@
 
-class Question{
+class QuestionModel{
 
   final String question;
   final Map<String, dynamic> options;
-  Question({this.question, this.options});
+  QuestionModel({this.question, this.options});
 }
