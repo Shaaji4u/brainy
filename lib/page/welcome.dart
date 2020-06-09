@@ -1,5 +1,4 @@
 import 'package:brainy/page/iq.dart';
-import 'package:brainy/page/result.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/theme.dart';
