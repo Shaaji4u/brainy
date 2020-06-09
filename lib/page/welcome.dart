@@ -32,7 +32,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void registerUser(){
     validateUserInput();
     if(validatorErrorText == null && usernameTextController.text.isNotEmpty){
-      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>IQTestScreen()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>IQTestScreen()));
       print(".........Register User...........");
       
             

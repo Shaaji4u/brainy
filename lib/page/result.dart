@@ -1,3 +1,4 @@
+import 'package:brainy/page/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_circular_chart/flutter_circular_chart.dart';
 
@@ -9,7 +10,8 @@ class ResultPage extends StatefulWidget {
   final double totalScore;
   final String result;
 
-  ResultPage({this.correctScore, this.wrongScore, this.totalScore, this.result});
+  ResultPage(
+      {this.correctScore, this.wrongScore, this.totalScore, this.result});
 
   @override
   _ResultPageState createState() => _ResultPageState();
@@ -46,7 +48,7 @@ class _ResultPageState extends State<ResultPage> {
                 flex: 2,
                 child: Center(
                     child: Text(
-                      widget.result,
+                  widget.result,
                   style: Theme.of(context).textTheme.headline3,
                 )),
               ),
@@ -66,7 +68,10 @@ class _ResultPageState extends State<ResultPage> {
                   alignment: Alignment.bottomCenter,
                   child: Center(
                     child: GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    (WelcomeScreen()))),
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               vertical: 20,
