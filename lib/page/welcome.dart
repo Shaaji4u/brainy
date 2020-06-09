@@ -1,3 +1,4 @@
+import 'package:brainy/page/iq.dart';
 import 'package:brainy/page/result.dart';
 import 'package:flutter/material.dart';
 
@@ -31,14 +32,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void registerUser(){
     validateUserInput();
     if(validatorErrorText == null && usernameTextController.text.isNotEmpty){
-      
-      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ResultPage(
-        correctScore: 70.0,
-        wrongScore: 30.0,
-        totalScore: 100,
-        result: "Output Will be displayed here\nThanks",
-      )));
-      
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>IQTestScreen()));
       print(".........Register User...........");
       
             
@@ -133,7 +127,3 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-
-
-
-
