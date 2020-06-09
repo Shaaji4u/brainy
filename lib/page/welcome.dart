@@ -1,4 +1,7 @@
+import 'package:brainy/page/result.dart';
 import 'package:flutter/material.dart';
+
+import '../theme/theme.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -29,7 +32,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     validateUserInput();
     if(validatorErrorText == null && usernameTextController.text.isNotEmpty){
       
-
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ResultPage()));
+      
       print(".........Register User...........");
       
             
@@ -44,14 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF040c4f), Color(0xFF030837)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            
-            tileMode: TileMode.clamp
-            
-          ),
+          gradient: gradientBg
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -60,11 +57,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 SizedBox(
                   height: MediaQuery.of(context).viewInsets.bottom == 0.0? MediaQuery.of(context).size.height *.2 : MediaQuery.of(context).size.height *.03,
                 ),
-                Text('Hi', style: Theme.of(context).textTheme.display1,),
+                Text('Hi', style: Theme.of(context).textTheme.headline1,),
                 Text('I\'m Brainy\nYour IQ Evaluator\n\n',
-                    style:Theme.of(context).textTheme.display2),
+                    style:Theme.of(context).textTheme.headline2),
                 Text('What can i call you?',
-                    style: Theme.of(context).textTheme.display3),
+                    style: Theme.of(context).textTheme.headline3),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * .03,
                 ),
@@ -95,7 +92,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                           labelText: "Call me",
                           labelStyle:
-                              Theme.of(context).textTheme.display4),
+                              Theme.of(context).textTheme.headline4),
                     ),
                   ),
                 ),
@@ -116,7 +113,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Text(
                           'Proceed',
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       )),
                 ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:brainy/page/welcome.dart';
+import 'package:brainy/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 class SplashScrren extends StatefulWidget {
@@ -9,7 +10,7 @@ class SplashScrren extends StatefulWidget {
 
 class _SplashScrrenState extends State<SplashScrren> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
     Timer(
         Duration(seconds: 1),
@@ -26,19 +27,15 @@ class _SplashScrrenState extends State<SplashScrren> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xFF040c4f), Color(0xFF030837)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              tileMode: TileMode.clamp),
+          gradient: gradientBg,
         ),
         child: Stack(children: <Widget>[
           Align(
             alignment: Alignment.center,
             child: Image(
-              height: 100,
-              width: 100,
-              image: ExactAssetImage("assets/splash.png")),
+                height: 100,
+                width: 100,
+                image: ExactAssetImage("assets/splash.png")),
           ),
           Align(
             alignment: Alignment.bottomCenter,
